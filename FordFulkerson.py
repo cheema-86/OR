@@ -57,18 +57,17 @@ class Graph:
 
         return max_flow
 
-#         s  a  c  d  b  e  t
-graph = [[0, 7,10, 0, 0, 0, 0], #s
-         [0, 0, 1, 8, 5, 0, 0], #a
-         [0, 0, 0, 2, 0, 8, 0], #c
-         [0, 0, 0, 0, 4,12, 0], #d
-         [0, 0, 0, 0, 0, 9, 6], #b
-         [0, 0, 0, 0, 0, 0,11], #e
-         [0, 0, 0, 0, 0, 0, 0]] #t 
+
+graph = [[0, 8, 0, 0, 3, 0],
+         [0, 0, 9, 0, 0, 0],
+         [0, 0, 0, 0, 7, 2],
+         [0, 0, 0, 0, 0, 5],
+         [0, 0, 7, 4, 0, 0],
+         [0, 0, 0, 0, 0, 0]]
 
 g = Graph(graph)
 
-source_row = 0
-target_row = 6
+source = 0
+sink = 5
 
-print("Max Flow: %d " % g.ford_fulkerson(source_row, target_row))
+print("Max Flow: %d " % g.ford_fulkerson(source, sink))
